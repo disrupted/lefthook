@@ -13,7 +13,7 @@ RSpec.describe 'run command' do
   describe 'fail chain' do
     let(:command) { 'lefthook run pre-commit' }
     let(:expected_output) do
-      "\n✔️  ok_script\n🥊  fail_script\n"
+      "\n✓  ok_script\n✕  fail_script\n"
     end
 
     it 'exit with 1 status' do
@@ -27,7 +27,7 @@ RSpec.describe 'run command' do
 
   describe 'ok chain' do
     let(:command) { 'lefthook run pre-push' }
-    let(:expected_output) { "\n✔️  ok_script" }
+    let(:expected_output) { "\n✓  ok_script" }
 
     it 'exit with 0 status' do
       expect(@status.success?).to be_truthy
