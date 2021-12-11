@@ -394,11 +394,11 @@ func printSummary(execTime time.Duration) {
 	}
 
 	for _, fileName := range okList {
-		log.Printf("✔️  %s\n", au.Green(fileName))
+		log.Println(au.Green(fmt.Sprintf("✓  %s", fileName)))
 	}
 
 	for _, fileName := range failList {
-		log.Printf("🥊  %s", au.Red(fileName))
+		log.Println(au.Red(fmt.Sprintf("✕  %s", fileName)))
 	}
 }
 
